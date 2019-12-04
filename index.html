@@ -51,7 +51,7 @@
 .nav-container-style {
     width: 100%;
     height: 51px;
-    bottom: 121px;
+    bottom: 112px;
     position: absolute;
     text-align: center;
     margin-left: auto;
@@ -66,23 +66,62 @@
     top: 7px;
     position: relative;
     display: inline-block;
+    margin-left: 8px;
 }
 
 .button-container-style {
     width: 100%;
-    height: 51px;
-    bottom: 50px;
+    height: 40px;
+    bottom: 47px;
     position: absolute;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid black; 
 }
+
+.ad-to-cart-container-style {
+    width: 150px;
+    height: 40px;
+    border:1px solid black;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.find-store-container-style {
+    width: 150px;
+    height: 40px;
+    border:1px solid black; 
+    display: inline-block;
+}
+
+.headline-container-style {
+    width: 100%;
+    height: 56px;
+    bottom: 112px;
+    position: absolute;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-bottom :50px
+}
+
+
+.summary-container-style {
+    width: 100%;
+    height: 56px;
+    bottom: 112px;
+    position: absolute;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-bottom :30px
+}
+
+
 
 
 </style>
 
-<script></script>
 
     <div class="wrapper-style" id="wrapper">
         <div class="ad-container-style" id="ad-container">
@@ -105,34 +144,34 @@
             </div>
             <div class="copy-container-style" id="copy-container">
                 <div class="headline-container-style" id="headline-container">
-                    <div class="headline-style" id="headline-1"></div>
-                    <div class="headline-style" id="headline-2"></div>
-                    <div class="headline-style" id="headline-3"></div>
-                    <div class="headline-style" id="headline-4"></div>
-                    <div class="headline-style" id="headline-5"></div>
+                    <div class="headline-style" id="headline-1">Headline 1</div>
+                    <div class="headline-style" id="headline-2">Headline 2</div>
+                    <div class="headline-style" id="headline-3">Headline 3</div>
+                    <div class="headline-style" id="headline-4">Headline 4</div>
+                    <div class="headline-style" id="headline-5">Headline 5</div>
                 </div>
                 <div class="summary-container-style" id="summary-container">
-                    <div class="summary-style" id="summary-1"></div>
-                    <div class="summary-style" id="summary-2"></div>
-                    <div class="summary-style" id="summary-3"></div>
-                    <div class="summary-style" id="summary-4"></div>
-                    <div class="summary-style" id="summary-5"></div>
+                    <div class="summary-style" id="summary-1">summary 1</div>
+                    <div class="summary-style" id="summary-2">summary 2</div>
+                    <div class="summary-style" id="summary-3">summary 3</div>
+                    <div class="summary-style" id="summary-4">summary 4</div>
+                    <div class="summary-style" id="summary-5">summary 5</div>
                 </div>
             </div>
             <div class="button-container-style" id="button-container">
                 <div class="ad-to-cart-container-style" id="ad-to-cart-container">
-                    <div class="ad-to-cart-style" id="ad-to-cart-1"></div>
-                    <div class="ad-to-cart-style" id="ad-to-cart-2"></div>
-                    <div class="ad-to-cart-style" id="ad-to-cart-3"></div>
-                    <div class="ad-to-cart-style" id="ad-to-cart-4"></div>
-                    <div class="ad-to-cart-style" id="ad-to-cart-5"></div>
+                    <div class="ad-to-cart-style" id="ad-to-cart-1">ADD TO CART 1</div>
+                    <div class="ad-to-cart-style" id="ad-to-cart-2">ADD TO CART 2</div>
+                    <div class="ad-to-cart-style" id="ad-to-cart-3">ADD TO CART 3</div>
+                    <div class="ad-to-cart-style" id="ad-to-cart-4">ADD TO CART 4</div>
+                    <div class="ad-to-cart-style" id="ad-to-cart-5">ADD TO CART 5</div>
                 </div>
                 <div class="find-store-container-style" id="find-store-container">
-                    <div class="find-store-style" id="find-store-1"></div>
-                    <div class="find-store-style" id="find-store-2"></div>
-                    <div class="find-store-style" id="find-store-3"></div>
-                    <div class="find-store-style" id="find-store-4"></div>
-                    <div class="find-store-style" id="find-store-5"></div>
+                    <div class="find-store-style" id="find-store-1">LOCATE STORE 1</div>
+                    <div class="find-store-style" id="find-store-2">LOCATE STORE 2</div>
+                    <div class="find-store-style" id="find-store-3">LOCATE STORE 3</div>
+                    <div class="find-store-style" id="find-store-4">LOCATE STORE 4</div>
+                    <div class="find-store-style" id="find-store-5">LOCATE STORE 5</div>
                 </div>
             </div>
 
@@ -140,3 +179,74 @@
     </div>  
 </body>
 </html>
+
+
+<script>
+
+var numberOfitem = 3;
+var currentSlideHDepth = 1;
+var allNests = ["nav","slide","headline","summary","ad-to-cart","find-store"];
+
+
+function init () {
+
+    if (numberOfitem < 5) 
+    {for (var i = 5; i > numberOfitem; i--) 
+        {for (var j = 0; j < allNests.length; j++) 
+            { document.getElementById(allNests[j] + "-" + i).remove(); }   
+        }
+    }
+
+    
+    for (var i = 1; i <= numberOfitem; i++) {
+        var tempNavItem = document.getElementById("nav-" + i);
+        tempNavItem.setAttribute('data-index-number', i);
+
+        
+        tempNavItem.addEventListener("click",function() {
+            updateSlide (event.target.dataset.indexNumber);
+        })
+
+        if (i == numberOfitem){
+            document.getElementById("slide-" + 1).style.zIndex = ++currentSlideHDepth;
+        }
+    }
+
+
+
+    function updateSlide (selectedOne) {
+        //currentSlideHDepth++;
+        showAndHide (selectedOne);
+        document.getElementById("slide-" + selectedOne).style.zIndex = ++currentSlideHDepth;
+
+    }
+
+    function showAndHide (whichOne) {
+        for (var i = 1; i <= numberOfitem; i++) {
+            if (i == whichOne) {
+                document.getElementById("headline-" + i).style.display = "block";
+                document.getElementById("summary-" + i).style.display = "block";
+                document.getElementById("ad-to-cart-" + i).style.display = "block";
+                document.getElementById("find-store-" + i).style.display = "block";
+            }
+            else {
+                document.getElementById("headline-" + i).style.display = "none";
+                document.getElementById("summary-" + i).style.display = "none";
+                document.getElementById("ad-to-cart-" + i).style.display = "none";
+                document.getElementById("find-store-" + i).style.display = "none";
+            }
+        }
+    }
+
+    showAndHide (1);
+
+
+
+
+
+}
+
+
+init ();
+
+</script>
