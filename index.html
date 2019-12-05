@@ -13,6 +13,28 @@
 
 <style>
 
+
+@font-face {
+  font-family:'Proxima N W01 Smbd';
+}
+
+@font-face {
+  font-family:'Proxima N W01 Reg';
+}
+
+@font-face {
+  font-family:'Proxima N W01 Bold';
+}
+
+@font-face {
+ font-family: "[%FontFamilyName%]";
+ src: url([%FontURL%]) format("[%FontFormat%]");
+}
+@font-face {
+ font-family: "[%SecondFontFamilyName%]";
+ src: url([%SecondFontURL%]) format("[%SecondFontFormat%]");
+}
+
 body {
     margin: 0px;
     padding: 0px;
@@ -38,6 +60,8 @@ body {
     margin: auto;
     max-width: 1125px;
     max-height:600px;
+    border: 1px solid black;
+    background: lightgray;
 }
 
 .logo-style {
@@ -45,11 +69,11 @@ body {
     height: 45px;
     max-height: 45px;
     max-width: 145px;
-    margin: 35px 0 0 35px;  
+    margin: 25px 0 0 25px;  
     position: absolute; 
     z-index: 99;
     cursor: pointer;
-    background: url(https://storage.googleapis.com/nyt-ads-static-assets/ads/adplatforms/logo-black.png) no-repeat;
+    background: url(https://storage.googleapis.com/nyt-ads-static-assets/ads/adplatforms/%20logo-black.png) no-repeat;
     background-size: contain; 
 }
 
@@ -61,6 +85,7 @@ body {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    z-index: 9999
 }
 
 .nav-style {
@@ -73,6 +98,26 @@ body {
     display: inline-block;
     margin-left: 8px;
     cursor: pointer;
+}
+
+#nav-1 {
+    background-color: #D31328; 
+}
+
+#nav-2 {
+    background-color: #DB32EF;
+}
+
+#nav-3 {
+    background-color: #4B38C4;
+}
+
+#nav-4 {
+    background-color: #2A80E1;
+}
+
+#nav-5 {
+    background-color: #2AE193;
 }
 
 .button-container-style {
@@ -92,14 +137,19 @@ body {
     display: inline-block;
     margin-right: 8px;
     cursor: pointer;
+    
 }
 
 .ad-to-cart-style {
   margin: 11px;
+  font-size: 15px;
+  font-family: 'Proxima N W01 Reg', sans-serif;
 }
 
 .find-store-style {
    margin: 11px;
+   font-size:15px;
+   font-family: 'Proxima N W01 Reg', sans-serif;
 }
 
 .find-store-container-style {
@@ -119,18 +169,22 @@ body {
     margin-left: auto;
     margin-right: auto; 
     margin-bottom :50px;
+    font-size: 27px;
+    font-family: 'Proxima N W01 Reg', sans-serif;
 }
 
 
 .summary-container-style {
     width: 100%;
     height: 56px;
-    bottom: 112px;
+    bottom: 103px;
     position: absolute;
     text-align: center;
     margin-left: auto;
     margin-right: auto; 
     margin-bottom :30px;
+    font-size:20px; 
+    font-family: 'Proxima N W01 Reg', sans-serif;
 }
 
 .slide-container-style {
@@ -140,33 +194,35 @@ body {
 }
 
 .slide-style{
-    height: 600px;
+    height: 281px;
     width: 100%;
+    margin-top:87px;
+
 }
 
 #slide-1 {
-   background-color:lightsalmon;
-  
+   background: url(https://storage.googleapis.com/nyt-ads-static-assets/ads/color1.jpg) no-repeat;
+   background-position: center;
 }
 
 #slide-2 {
-   background-color:green;
-
+   background: url(https://storage.googleapis.com/nyt-ads-static-assets/ads/color2.jpg) no-repeat;
+   background-position: center;
 }
 
 #slide-3 {
-    background-color:lightpink;
-   
+    background: url(https://storage.googleapis.com/nyt-ads-static-assets/ads/color3.jpg) no-repeat;
+    background-position: center;
 }
 
 #slide-4 {
-    background-color:lightgray;
-
+    background: url(https://storage.googleapis.com/nyt-ads-static-assets/ads/color4.jpg) no-repeat;
+    background-position: center;
 }
 
 #slide-5 {
-    background-color:lightseagreen;  
-  
+   background: url(https://storage.googleapis.com/nyt-ads-static-assets/ads/color5.jpg) no-repeat;  
+   background-position: center;
 }
 
 </style>
